@@ -1,0 +1,40 @@
+.ticker {
+    width: 100%;
+    background: var(--vintage-wine);
+    color: var(--almond);
+    height: 36px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(176, 140, 63, 0.3);
+  }
+  
+  .track {
+    display: flex;
+    white-space: nowrap;
+    animation: scroll 35s linear infinite;
+  }
+  
+  .track span {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding-right: 40px;
+    color: var(--almond);
+  }
+  
+  .track span:first-child {
+    color: var(--gold);
+  }
+  
+  @keyframes scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }

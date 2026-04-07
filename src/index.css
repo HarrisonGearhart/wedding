@@ -1,0 +1,82 @@
+:root {
+    --almond:        #EFD4C4;
+    --pink-pearl:    #E2B3C2;
+    --lilac-sachet:  #E9ADCA;
+    --deep-puce:     #AC5B67;
+    --antique-ruby:  #781727;
+    --vintage-wine:  #3F1521;
+    --dark-ruby:     #63001F;
+    --gold:          #B08C3F;
+    --aubergine:     #2A1525;
+  
+    --bg:            var(--almond);
+    --bg-dark:       var(--vintage-wine);
+    --text-primary:  var(--vintage-wine);
+    --text-light:    var(--almond);
+    --text-muted:    var(--deep-puce);
+    --accent:        var(--gold);
+    --border:        rgba(63, 21, 33, 0.15);
+    --border-light:  rgba(239, 212, 196, 0.25);
+  
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body:    'Montserrat', sans-serif;
+  
+    --navbar-height: 68px;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--font-body);
+    background-color: var(--bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* This is critical — makes font-display variable apply everywhere */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  button {
+    cursor: pointer;
+    font-family: var(--font-body);
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--almond); }
+  ::-webkit-scrollbar-thumb { background: var(--deep-puce); border-radius: 3px; }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  @keyframes slideInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }

@@ -1,0 +1,68 @@
+.footer {
+    background: var(--vintage-wine);
+    color: var(--almond);
+    padding: 40px 24px;
+    text-align: center;
+  }
+  
+  .inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .names {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: var(--almond);
+  }
+  
+  .date {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .link {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--almond);
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  
+  .link:hover {
+    opacity: 1;
+  }
+  
+  .dot {
+    color: var(--gold);
+    font-size: 8px;
+    opacity: 0.6;
+  }
+  
+  .copy {
+    font-size: 11px;
+    color: var(--almond);
+    opacity: 0.35;
+    margin-top: 12px;
+    letter-spacing: 0.06em;
+  }

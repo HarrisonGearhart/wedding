@@ -1,0 +1,54 @@
+.page {
+    min-height: calc(100vh - var(--navbar-height) - 36px); /* minus ticker */
+    padding-top: var(--navbar-height);
+  }
+  
+  .page-content {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+  
+  .page-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 400;
+    color: var(--vintage-wine);
+    text-align: center;
+    margin-bottom: 8px;
+    letter-spacing: 0.04em;
+  }
+  
+  .page-subtitle {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--deep-puce);
+    text-align: center;
+    margin-bottom: 48px;
+    letter-spacing: 0.06em;
+  }
+  
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 32px 0;
+  }
+  
+  .divider::before,
+  .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  
+  .divider-diamond {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
