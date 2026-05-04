@@ -4,60 +4,60 @@ import Footer from '../components/Footer'
 import styles from './RSVP.module.css'
 import { Search, X, ChevronLeft, ChevronRight, Check } from 'lucide-react'
 
-// ─────────────────────────────────────────────
-// GUEST LIST
-// Each entry has a display name for the list,
-// and a members array for the form.
-// For a single guest: members: ['First Last']
-// For a couple:       members: ['Name 1', 'Name 2']
-// For a family:       members: ['Parent 1', 'Parent 2', 'Child 1', ...]
-// ─────────────────────────────────────────────
 const GUESTS = [
-  { id: 1,  name: 'Chris & Cara Gearhart',        members: ['Chris Gearhart', 'Cara Gearhart', 'Gabe Gearhart', 'Evelyn Gearhart', 'Eleanor Gearhart'] },
-  { id: 2,  name: 'James & Margaret Thompson',    members: ['James Thompson', 'Margaret Thompson'] },
-  { id: 3,  name: 'Robert Calloway',              members: ['Robert Calloway'] },
-  { id: 4,  name: 'Susan & David Martinez',       members: ['Susan Martinez', 'David Martinez'] },
-  { id: 5,  name: 'Emily Hargrove',               members: ['Emily Hargrove'] },
-  { id: 6,  name: 'Thomas & Patricia Weston',     members: ['Thomas Weston', 'Patricia Weston'] },
-  { id: 7,  name: 'Christopher Nguyen',           members: ['Christopher Nguyen'] },
-  { id: 8,  name: 'Rebecca & Jonathan Ashford',   members: ['Rebecca Ashford', 'Jonathan Ashford'] },
-  { id: 9,  name: 'Michael Sterling',             members: ['Michael Sterling'] },
-  { id: 10, name: 'Laura & Brian Fontaine',       members: ['Laura Fontaine', 'Brian Fontaine'] },
-  { id: 11, name: 'Daniel Kowalski',              members: ['Daniel Kowalski'] },
-  { id: 12, name: 'Stephanie & Kevin Okafor',     members: ['Stephanie Okafor', 'Kevin Okafor'] },
-  { id: 13, name: 'Andrew Prescott',              members: ['Andrew Prescott'] },
-  { id: 14, name: 'Natalie & Ryan Belcher',       members: ['Natalie Belcher', 'Ryan Belcher'] },
-  { id: 15, name: 'William Chambers',             members: ['William Chambers'] },
-  { id: 16, name: 'Amanda & Scott Tillman',       members: ['Amanda Tillman', 'Scott Tillman'] },
-  { id: 17, name: 'Jessica Moreau',               members: ['Jessica Moreau'] },
-  { id: 18, name: 'Brandon & Tiffany Hollis',     members: ['Brandon Hollis', 'Tiffany Hollis'] },
-  { id: 19, name: 'Cynthia Park',                 members: ['Cynthia Park'] },
-  { id: 20, name: 'Gregory & Diane Sutherland',   members: ['Gregory Sutherland', 'Diane Sutherland'] },
+  { id: 1,  name: 'Lexi Marroquin & Ben Armstrong',      members: ['Lexi Marroquin', 'Ben Armstrong'] },
+  { id: 2,  name: 'Mark & Sarah Antonio',                members: ['Mark Antonio', 'Sarah Antonio'] },
+  { id: 3,  name: 'Brenna Allen',                        members: ['Brenna Allen'] },
+  { id: 4,  name: 'Leighan & Lance Allen',               members: ['Leighan Allen', 'Lance Allen'] },
+  { id: 5,  name: 'Todd Allen +1',                       members: ['Todd Allen', 'Todd Allen +1'] },
+  { id: 6,  name: 'Brady Bean & Reese Charles',          members: ['Brady Bean', 'Reese Charles'] },
+  { id: 7,  name: 'Carter & Katie Clancy',               members: ['Carter Clancy', 'Katie Clancy'] },
+  { id: 8,  name: 'Teresa Cooper',                       members: ['Teresa Cooper'] },
+  { id: 9,  name: 'Kristi Reed & Jason Crouch',          members: ['Kristi Reed', 'Jason Crouch'] },
+  { id: 10, name: 'Dale & Carol DeWitt',                 members: ['Dale DeWitt', 'Carol DeWitt'] },
+  { id: 11, name: 'Drake DeWitt',                        members: ['Drake DeWitt'] },
+  { id: 12, name: 'Kylie & Tyler French',                members: ['Kylie French', 'Tyler French'] },
+  { id: 13, name: 'Aaron & Robyn Gearhart',              members: ['Aaron Gearhart', 'Robyn Gearhart'] },
+  { id: 14, name: 'Chris & Cara Gerhardt',               members: ['Chris Gerhardt', 'Cara Gerhardt', 'Gabe Gerhardt', 'Evelyn Gerhardt', 'Eleanor Gerhardt'] },
+  { id: 15, name: 'Connor Gearhart',                     members: ['Connor Gearhart'] },
+  { id: 16, name: 'Harry & Sandy Gearhart',              members: ['Harry Gearhart', 'Sandy Gearhart'] },
+  { id: 17, name: 'Pat & Jackie Gearhart',               members: ['Pat Gearhart', 'Jackie Gearhart'] },
+  { id: 18, name: 'Phyllis Grell',                       members: ['Phyllis Grell'] },
+  { id: 19, name: 'Bob Hill',                            members: ['Bob Hill'] },
+  { id: 20, name: 'Steve Hill',                          members: ['Steve Hill'] },
+  { id: 21, name: 'Camille & Barclay Holt & Bryan Holt', members: ['Camille Holt', 'Barclay Holt', 'Bryan Holt'] },
+  { id: 22, name: 'Kaylee Holt',                         members: ['Kaylee Holt'] },
+  { id: 23, name: 'Lynsey Naugle & Seth Hughes',         members: ['Lynsey Naugle', 'Seth Hughes'] },
+  { id: 24, name: 'Zach & Katie Johnston',               members: ['Zach Johnston', 'Katie Johnston'] },
+  { id: 25, name: 'Brenna & Nathan Major',               members: ['Brenna Major', 'Nathan Major'] },
+  { id: 26, name: 'Taylor & Chad Coccaro',               members: ['Taylor Coccaro', 'Chad Coccaro'] },
+  { id: 27, name: 'Andrea Puigbo',                       members: ['Andrea Puigbo'] },
+  { id: 28, name: 'Hannah & Dom Richert',                members: ['Hannah Richert', 'Dom Richert'] },
+  { id: 29, name: 'Fritzie & Barry Roop',                members: ['Fritzie Roop', 'Barry Roop'] },
+  { id: 30, name: 'Lisa & Danny Sanchez',                members: ['Lisa Sanchez', 'Danny Sanchez'] },
+  { id: 31, name: 'Logan & Kaleb Townsend',              members: ['Logan Townsend', 'Kaleb Townsend'] },
+  { id: 32, name: 'Test Harrison',                       members: ['Test Harrison'] },
 ]
 
 const PER_PAGE = 8
+const EMAILJS_SERVICE_ID  = 'service_rnfz7bt'
+const EMAILJS_TEMPLATE_ID = 'template_oafmznh'
+const EMAILJS_PUBLIC_KEY  = 'V1dhIXrHcH3H3INMH'
 
-const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID'
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'
-const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY'
-
-// Build a blank attendees array from a guest's members list
-const buildAttendees = (members) =>
-  members.map(name => ({ name, attending: '' }))
+const buildAttendees = (members) => members.map(name => ({ name, attending: '' }))
 
 export default function RSVP() {
-  const [search, setSearch]         = useState('')
-  const [page, setPage]             = useState(1)
-  const [selected, setSelected]     = useState(null)
-  const [attendees, setAttendees]   = useState([])
+  const [search, setSearch]           = useState('')
+  const [page, setPage]               = useState(1)
+  const [selected, setSelected]       = useState(null)
+  const [attendees, setAttendees]     = useState([])
   const [songRequest, setSongRequest] = useState('')
-  const [allergies, setAllergies]   = useState('')
-  const [notes, setNotes]           = useState('')
-  const [errors, setErrors]         = useState({})
-  const [submitting, setSubmitting] = useState(false)
-  const [submitted, setSubmitted]   = useState(false)
+  const [allergies, setAllergies]     = useState('')
+  const [notes, setNotes]             = useState('')
+  const [errors, setErrors]           = useState({})
+  const [submitting, setSubmitting]   = useState(false)
+  const [submitted, setSubmitted]     = useState(false)
 
-  // Filter + paginate
   const filtered = useMemo(() => {
     const q = search.toLowerCase().trim()
     return q ? GUESTS.filter(g => g.name.toLowerCase().includes(q)) : GUESTS
@@ -103,25 +103,19 @@ export default function RSVP() {
     ev.preventDefault()
     const errs = validate()
     if (Object.keys(errs).length) { setErrors(errs); return }
-
     setSubmitting(true)
-
-    // Build a readable summary of who's attending
-    const attendeeSummary = attendees
-      .map(a => `${a.name}: ${a.attending}`)
-      .join('\n')
-
+    const attendeeSummary = attendees.map(a => `${a.name}: ${a.attending}`).join('\n')
     try {
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          group_name:    selected.name,
-          attendees:     attendeeSummary,
-          song_request:  songRequest,
-          allergies:     allergies || 'None',
-          notes:         notes || 'None',
-          to_email:      'hgearhart98@gmail.com',
+          group_name:   selected.name,
+          attendees:    attendeeSummary,
+          song_request: songRequest,
+          allergies:    allergies || 'None',
+          notes:        notes || 'None',
+          to_email:     'hgearhart98@gmail.com',
         },
         EMAILJS_PUBLIC_KEY
       )
@@ -140,7 +134,6 @@ export default function RSVP() {
         <h1 className="page-title">RSVP</h1>
         <p className="page-subtitle">Find your name below and click to respond</p>
 
-        {/* Search */}
         <div className={styles.searchWrap}>
           <Search size={16} className={styles.searchIcon} />
           <input
@@ -157,7 +150,6 @@ export default function RSVP() {
           )}
         </div>
 
-        {/* Guest list */}
         <div className={styles.list}>
           {paginated.length === 0 ? (
             <div className={styles.empty}>
@@ -180,7 +172,6 @@ export default function RSVP() {
           )}
         </div>
 
-        {/* Pagination */}
         {totalPages > 1 && (
           <div className={styles.pagination}>
             <button className={styles.pageBtn} onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}>
@@ -207,7 +198,6 @@ export default function RSVP() {
         </p>
       </div>
 
-      {/* RSVP Modal */}
       {selected && (
         <div className={styles.overlay} onClick={closeModal}>
           <div className={styles.modal} onClick={e => e.stopPropagation()}>
@@ -230,7 +220,6 @@ export default function RSVP() {
                   <div className={styles.modalDivider}><span className={styles.modalDiamond} /></div>
                 </div>
 
-                {/* One attending toggle per member */}
                 <div className={styles.field}>
                   <label className={styles.label}>Attendees <span className={styles.required}>*</span></label>
                   <div className={styles.attendeeList}>
@@ -262,9 +251,10 @@ export default function RSVP() {
                   </div>
                 </div>
 
-                {/* Song Request */}
                 <div className={styles.field}>
-                  <label className={styles.label} htmlFor="song">Song / Favorite Couple Song <span className={styles.required}>*</span></label>
+                  <label className={styles.label} htmlFor="song">
+                    Song / Favorite Couple Song <span className={styles.required}>*</span>
+                  </label>
                   <input
                     id="song"
                     type="text"
@@ -276,7 +266,6 @@ export default function RSVP() {
                   {errors.songRequest && <p className={styles.error}>{errors.songRequest}</p>}
                 </div>
 
-                {/* Allergies */}
                 <div className={styles.field}>
                   <label className={styles.label} htmlFor="allergies">
                     Dietary Restrictions / Allergies
@@ -292,7 +281,6 @@ export default function RSVP() {
                   />
                 </div>
 
-                {/* Notes */}
                 <div className={styles.field}>
                   <label className={styles.label} htmlFor="notes">
                     Notes / Comments

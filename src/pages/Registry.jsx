@@ -2,7 +2,7 @@ import Footer from '../components/Footer'
 import styles from './Registry.module.css'
 import { Gift } from 'lucide-react'
 
-const REGISTRY_URL = 'https://www.zola.com'
+const REGISTRY_URL = 'https://overthemoon.com/apps/registry/dewitt-gearhart-eb2d/experiences'
 
 export default function Registry() {
   return (
