@@ -1,5 +1,25 @@
 /* Search */
-.searchWrap {
+.searchBtn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: var(--vintage-wine);
+    color: var(--almond);
+    border: none;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: background 0.2s;
+    margin-bottom: 20px;
+  }
+  
+  .searchBtn:hover {
+    background: var(--antique-ruby);
+  }
+  
+  .searchWrap {
     position: relative;
     margin-bottom: 24px;
   }
@@ -118,6 +138,19 @@
   
   .row:hover .rowCta {
     opacity: 1;
+  }
+  
+  .prompt {
+    padding: 32px 24px;
+    text-align: center;
+    color: var(--deep-puce);
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+  
+  .prompt strong {
+    color: var(--vintage-wine);
+    font-weight: 600;
   }
   
   .empty {

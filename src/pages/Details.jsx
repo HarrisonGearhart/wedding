@@ -23,18 +23,18 @@ export default function Details() {
           {/* Date & Time */}
           <div className={styles.card}>
             <div className={styles.cardIcon}><Clock size={20} /></div>
-            <h2 className={styles.cardTitle}>Date & Time</h2>
+            <h2 className={styles.cardTitle}>September 25, 2026</h2>
             <div className={styles.divider}><span className={styles.diamond} /></div>
-            <p className={styles.cardMain}>September 25, 2026</p>
-            <p className={styles.cardSub}>5:00 PM – 10:00 PM</p>
+            <p className={styles.cardMain}></p>
+            <p className={styles.cardSub}>We kindly request all guests arrive around 4:00 PM. The ceremony will begin at promptly 4:30 PM and, to preserve the moment, late arrivals will be welcomed only after the ceremony has concluded. </p>
           </div>
 
           {/* Venue */}
           <div className={styles.card}>
             <div className={styles.cardIcon}><MapPin size={20} /></div>
-            <h2 className={styles.cardTitle}>Venue</h2>
+            <h2 className={styles.cardTitle}>Harwelden Mansion</h2>
             <div className={styles.divider}><span className={styles.diamond} /></div>
-            <p className={styles.cardMain}>Harwelden Mansion</p>
+            <p className={styles.cardMain}></p>
             <p className={styles.cardSub}>
               2210 S Main St<br />
               Tulsa, Oklahoma 74114
@@ -52,17 +52,14 @@ export default function Details() {
           {/* Hotel */}
           <div className={styles.card}>
             <div className={styles.cardIcon}><Hotel size={20} /></div>
-            <h2 className={styles.cardTitle}>Hotel Block</h2>
+            <h2 className={styles.cardTitle}>Brut Hotel</h2>
             <div className={styles.divider}><span className={styles.diamond} /></div>
-            <p className={styles.cardMain}>Hotel Name Here</p>
+            <p className={styles.cardMain}></p>
             <p className={styles.cardSub}>
               A room block has been reserved for our guests.
             </p>
-            <p className={styles.code}>
-              Booking Code: <strong>GEARHART2026</strong>
-            </p>
             <a
-              href="#"
+              href="https://hotels.cloudbeds.com/reservation/CQhAqR?allotment_block_code=b505745#checkin=2026-09-25&checkout=2026-09-26"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.cardLink}
@@ -74,11 +71,11 @@ export default function Details() {
           {/* Dress Code */}
           <div className={styles.card}>
             <div className={styles.cardIcon}><Shirt size={20} /></div>
-            <h2 className={styles.cardTitle}>Dress Code</h2>
+            <h2 className={styles.cardTitle}>Formal Attire</h2>
             <div className={styles.divider}><span className={styles.diamond} /></div>
-            <p className={styles.cardMain}>Cocktail Attire</p>
+            <p className={styles.cardMain}></p>
             <p className={styles.cardSub}>
-              Please avoid white and ivory. We'd love to see our wedding colors — deep wines, dusty roses, and warm golds!
+              Please avoid white and ivory. We'd love to see you in our wedding colors — plums, pinks, and greens!
             </p>
           </div>
 
@@ -89,16 +86,8 @@ export default function Details() {
             <div className={styles.divider}><span className={styles.diamond} /></div>
             <div className={styles.parkingOptions}>
               <div className={styles.parkingOption}>
-                <p className={styles.parkingLabel}>On-Site Parking</p>
-                <p className={styles.cardSub}>Free parking is available in the venue lot. Enter from Main Street.</p>
-              </div>
-              <div className={styles.parkingOption}>
-                <p className={styles.parkingLabel}>Street Parking</p>
-                <p className={styles.cardSub}>Street parking is available on nearby streets at no charge.</p>
-              </div>
-              <div className={styles.parkingOption}>
-                <p className={styles.parkingLabel}>Rideshare</p>
-                <p className={styles.cardSub}>Uber and Lyft drop-off at the main entrance.</p>
+                <p className={styles.parkingLabel}></p>
+                <p className={styles.cardSub}>Parking is available on the premises and some street parking. The Harwelden also owns the lot on the southwest corner of 21st and Main Street which can be used. Events of 50 or more are required to secure valet. No parking in the adjacent private lots.</p>
               </div>
             </div>
           </div>

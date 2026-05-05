@@ -9,7 +9,7 @@ const GUESTS = [
   { id: 2,  name: 'Mark & Sarah Antonio',                members: ['Mark Antonio', 'Sarah Antonio'] },
   { id: 3,  name: 'Brenna Allen',                        members: ['Brenna Allen'] },
   { id: 4,  name: 'Leighan & Lance Allen',               members: ['Leighan Allen', 'Lance Allen'] },
-  { id: 5,  name: 'Todd Allen +1',                       members: ['Todd Allen', 'Todd Allen +1'] },
+  { id: 5,  name: 'Todd Allen & Christine Bovier',        members: ['Todd Allen', 'Christine Bovier'] },
   { id: 6,  name: 'Brady Bean & Reese Charles',          members: ['Brady Bean', 'Reese Charles'] },
   { id: 7,  name: 'Carter & Katie Clancy',               members: ['Carter Clancy', 'Katie Clancy'] },
   { id: 8,  name: 'Teresa Cooper',                       members: ['Teresa Cooper'] },
@@ -18,7 +18,7 @@ const GUESTS = [
   { id: 11, name: 'Drake DeWitt',                        members: ['Drake DeWitt'] },
   { id: 12, name: 'Kylie & Tyler French',                members: ['Kylie French', 'Tyler French'] },
   { id: 13, name: 'Aaron & Robyn Gearhart',              members: ['Aaron Gearhart', 'Robyn Gearhart'] },
-  { id: 14, name: 'Chris & Cara Gerhardt',               members: ['Chris Gerhardt', 'Cara Gerhardt', 'Gabe Gerhardt', 'Evelyn Gerhardt', 'Eleanor Gerhardt'] },
+  { id: 14, name: 'Chris & Cara Gearhart',               members: ['Chris Gearhart', 'Cara Gearhart', 'Gabe Gearhart', 'Evelyn Gearhart', 'Eleanor Gearhart'] },
   { id: 15, name: 'Connor Gearhart',                     members: ['Connor Gearhart'] },
   { id: 16, name: 'Harry & Sandy Gearhart',              members: ['Harry Gearhart', 'Sandy Gearhart'] },
   { id: 17, name: 'Pat & Jackie Gearhart',               members: ['Pat Gearhart', 'Jackie Gearhart'] },
@@ -48,6 +48,7 @@ const buildAttendees = (members) => members.map(name => ({ name, attending: '' }
 
 export default function RSVP() {
   const [search, setSearch]           = useState('')
+  const [query, setQuery]             = useState('')
   const [page, setPage]               = useState(1)
   const [selected, setSelected]       = useState(null)
   const [attendees, setAttendees]     = useState([])
@@ -59,14 +60,16 @@ export default function RSVP() {
   const [submitted, setSubmitted]     = useState(false)
 
   const filtered = useMemo(() => {
-    const q = search.toLowerCase().trim()
-    return q ? GUESTS.filter(g => g.name.toLowerCase().includes(q)) : GUESTS
-  }, [search])
+    const q = query.toLowerCase().trim()
+    return q ? GUESTS.filter(g => g.name.toLowerCase().includes(q)) : []
+  }, [query])
 
   const totalPages = Math.ceil(filtered.length / PER_PAGE)
   const paginated  = filtered.slice((page - 1) * PER_PAGE, page * PER_PAGE)
 
-  const handleSearch = (e) => { setSearch(e.target.value); setPage(1) }
+  const handleSearch = (e) => { setSearch(e.target.value) }
+  const handleSearchSubmit = () => { setQuery(search); setPage(1) }
+  const handleSearchKey = (e) => { if (e.key === 'Enter') handleSearchSubmit() }
 
   const openModal = (guest) => {
     setSelected(guest)
@@ -135,25 +138,33 @@ export default function RSVP() {
         <p className="page-subtitle">Find your name below and click to respond</p>
 
         <div className={styles.searchWrap}>
-          <Search size={16} className={styles.searchIcon} />
+          <Search size={16} className={styles.searchIcon} onClick={handleSearchSubmit} style={{cursor:'pointer'}} />
           <input
             type="text"
             className={styles.search}
             placeholder="Search guest name here..."
             value={search}
             onChange={handleSearch}
+            onKeyDown={handleSearchKey}
           />
           {search && (
-            <button className={styles.clearSearch} onClick={() => { setSearch(''); setPage(1) }}>
+            <button className={styles.clearSearch} onClick={() => { setSearch(''); setQuery(''); setPage(1) }}>
               <X size={14} />
             </button>
           )}
         </div>
+        <button className={styles.searchBtn} onClick={handleSearchSubmit}>
+          Search
+        </button>
 
         <div className={styles.list}>
-          {paginated.length === 0 ? (
+          {!query.trim() ? (
+            <div className={styles.prompt}>
+              Type your name above and hit <strong>Search</strong> to find your RSVP form.
+            </div>
+          ) : paginated.length === 0 ? (
             <div className={styles.empty}>
-              No guests found matching "{search}".<br />
+              No guests found matching "{query}".<br />
               Please contact Harrison if your name is missing.
             </div>
           ) : (
