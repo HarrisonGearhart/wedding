@@ -36,7 +36,8 @@ const GUESTS = [
   { id: 29, name: 'Fritzie & Barry Roop',                members: ['Fritzie Roop', 'Barry Roop'] },
   { id: 30, name: 'Lisa & Danny Sanchez',                members: ['Lisa Sanchez', 'Danny Sanchez'] },
   { id: 31, name: 'Logan & Kaleb Townsend',              members: ['Logan Townsend', 'Kaleb Townsend'] },
-  { id: 32, name: 'Test Harrison',                       members: ['Test Harrison'] },
+  { id: 32, name: 'Ezril Dyer',                          members: ['Ezril Dyer'] },
+  { id: 33, name: 'Dylan Scott',                         members: ['Dylan Scott'] },
 ]
 
 const PER_PAGE = 8
@@ -79,6 +80,9 @@ export default function RSVP() {
     setNotes('')
     setErrors({})
     setSubmitted(false)
+    document.body.style.overflow = 'hidden'
+    document.body.style.position = 'fixed'
+    document.body.style.width = '100%'
   }
 
   const closeModal = () => {
@@ -86,6 +90,9 @@ export default function RSVP() {
     setAttendees([])
     setErrors({})
     setSubmitted(false)
+    document.body.style.overflow = ''
+    document.body.style.position = ''
+    document.body.style.width = ''
   }
 
   const setAttendeeStatus = (index, value) => {
@@ -135,7 +142,7 @@ export default function RSVP() {
     <div className="page">
       <div className="page-content">
         <h1 className="page-title">RSVP</h1>
-        <p className="page-subtitle">Find your name below and click to respond</p>
+        <p className="page-subtitle">Type your name in the search bar and hit <strong>Search</strong> to find your RSVP form.</p>
 
         <div className={styles.searchWrap}>
           <Search size={16} className={styles.searchIcon} onClick={handleSearchSubmit} style={{cursor:'pointer'}} />
@@ -157,12 +164,8 @@ export default function RSVP() {
           Search
         </button>
 
-        <div className={styles.list}>
-          {!query.trim() ? (
-            <div className={styles.prompt}>
-              Type your name above and hit <strong>Search</strong> to find your RSVP form.
-            </div>
-          ) : paginated.length === 0 ? (
+        {query.trim() && <div className={styles.list}>
+          {paginated.length === 0 ? (
             <div className={styles.empty}>
               No guests found matching "{query}".<br />
               Please contact Harrison if your name is missing.
@@ -181,9 +184,9 @@ export default function RSVP() {
               </button>
             ))
           )}
-        </div>
+        </div>}
 
-        {totalPages > 1 && (
+        {query.trim() && totalPages > 1 && (
           <div className={styles.pagination}>
             <button className={styles.pageBtn} onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}>
               <ChevronLeft size={16} />

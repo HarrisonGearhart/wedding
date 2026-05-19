@@ -1,26 +1,21 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import Footer from '../components/Footer'
 import styles from './Home.module.css'
 
-// Replace these imports with your actual photos later:
-// import photo1 from '../assets/placeholder1.jpg'
-// import photo2 from '../assets/placeholder2.jpg'
-// import photo3 from '../assets/placeholder3.jpg'
-// import harwelden from '../assets/harwelden.jpg'
+import HD1 from '../assets/HD-1.webp'
+import HD2 from '../assets/HD-2.webp'
+import HD3 from '../assets/HD-3.webp'
+import HD4 from '../assets/HD-4.webp'
+import HD5 from '../assets/HD-5.webp'
+import HD6 from '../assets/HD-6.webp'
+import HD7 from '../assets/HD-7.webp'
 
-const SLIDES = [
-  { label: 'Photo 1',   color: '#2A1525' },
-  { label: 'Photo 2',   color: '#3F1521' },
-  { label: 'Photo 3',   color: '#63001F' },
-  { label: 'Harwelden', color: '#4a1a2a' },
-]
+const SLIDES = [HD1, HD2, HD3, HD4, HD5, HD6, HD7]
 
 export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0)
   const [showPopup, setShowPopup]     = useState(false)
 
-  // Auto-advance slideshow
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveSlide(s => (s + 1) % SLIDES.length)
@@ -28,7 +23,6 @@ export default function Home() {
     return () => clearInterval(timer)
   }, [])
 
-  // Only show popup if user hasn't seen it this session
   useEffect(() => {
     if (!sessionStorage.getItem('welcomeSeen')) {
       const t = setTimeout(() => setShowPopup(true), 1200)
@@ -43,32 +37,24 @@ export default function Home() {
 
   return (
     <div className={styles.home}>
-      {/* Slideshow background */}
       <div className={styles.slideshow}>
         {SLIDES.map((slide, i) => (
           <div
             key={i}
             className={`${styles.slide} ${i === activeSlide ? styles.slideActive : ''}`}
-            style={{
-              background: `linear-gradient(135deg, ${slide.color} 0%, #3F1521 40%, #781727 100%)`,
-              // Once you add real photos swap the line above for:
-              // backgroundImage: `url(${[photo1,photo2,photo3,harwelden][i]})`,
-              // backgroundSize: 'cover',
-              // backgroundPosition: 'center',
-            }}
-          />
+          >
+            <img src={slide} alt="" className={styles.slideImg} />
+          </div>
         ))}
         <div className={styles.overlay} />
       </div>
 
-      {/* Slide indicators */}
       <div className={styles.indicators}>
         {SLIDES.map((_, i) => (
           <span key={i} className={`${styles.dot} ${i === activeSlide ? styles.dotActive : ''}`} />
         ))}
       </div>
 
-      {/* Hero content */}
       <div className={styles.hero}>
         <p className={styles.preTitle}>You are invited to the wedding of</p>
         <h1 className={styles.names}>Harrison & Daelyn</h1>
@@ -88,7 +74,6 @@ export default function Home() {
         </nav>
       </div>
 
-      {/* Welcome popup — only shows once per session */}
       {showPopup && (
         <div className={styles.popupOverlay} onClick={dismissPopup}>
           <div className={styles.popup} onClick={e => e.stopPropagation()}>
@@ -104,7 +89,6 @@ export default function Home() {
         </div>
       )}
 
-      <Footer />
     </div>
   )
 }

@@ -10,7 +10,7 @@
   }
   
   .iconWrap {
-    color: var(--gold);
+    color: var(--olive-gold);
     margin-bottom: 16px;
     opacity: 0.85;
   }
@@ -32,7 +32,7 @@
   .diamond {
     width: 6px;
     height: 6px;
-    background: var(--gold);
+    background: var(--olive-gold);
     transform: rotate(45deg);
     flex-shrink: 0;
   }
@@ -42,7 +42,7 @@
     font-size: clamp(1.1rem, 3vw, 1.4rem);
     font-weight: 400;
     font-style: italic;
-    color: var(--vintage-wine);
+    color: var(--burgundy);
     line-height: 1.6;
     margin-bottom: 16px;
     letter-spacing: 0.02em;
@@ -51,21 +51,22 @@
   .body {
     font-size: 0.95rem;
     line-height: 1.8;
-    color: var(--deep-puce);
+    color: var(--burgundy);
+    opacity: 0.6;
     margin-bottom: 32px;
   }
   
   .btn {
     display: inline-block;
     padding: 14px 40px;
-    background: var(--vintage-wine);
+    background: var(--burgundy);
     color: var(--almond);
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     border-radius: 2px;
-    border: 1px solid var(--vintage-wine);
+    border: 1px solid var(--burgundy);
     transition: background 0.25s, color 0.25s;
     margin-bottom: 14px;
     display: block;
@@ -75,12 +76,13 @@
   
   .btn:hover {
     background: transparent;
-    color: var(--vintage-wine);
+    color: var(--burgundy);
   }
   
   .note {
     font-size: 11px;
-    color: var(--deep-puce);
+    color: var(--burgundy);
+    opacity: 0.6;
     opacity: 0.65;
     letter-spacing: 0.06em;
     margin-top: 12px;

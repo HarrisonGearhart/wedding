@@ -1,7 +1,7 @@
 .ticker {
     width: 100%;
-    background: var(--vintage-wine);
-    color: var(--almond);
+    background: var(--burgundy);
+    color: var(--cream);
     height: 36px;
     overflow: hidden;
     display: flex;
@@ -11,7 +11,7 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(176, 140, 63, 0.3);
+    border-bottom: 1px solid rgba(138, 131, 39, 0.3);
   }
   
   .track {
@@ -27,11 +27,11 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     padding-right: 40px;
-    color: var(--almond);
+    color: var(--cream);
   }
   
   .track span:first-child {
-    color: var(--gold);
+    color: var(--olive-gold);
   }
   
   @keyframes scroll {

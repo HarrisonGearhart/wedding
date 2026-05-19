@@ -1,40 +1,47 @@
 .page {
-    min-height: calc(100vh - var(--navbar-height) - 36px); /* minus ticker */
-    padding-top: var(--navbar-height);
+    min-height: 100vh;
+    padding-top: calc(var(--navbar-height) + 36px);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .page .page-content {
+    flex: 1;
   }
   
   .page-content {
     max-width: 860px;
     margin: 0 auto;
-    padding: 48px 24px 80px;
+    padding: 24px 24px 40px;
   }
   
   .page-title {
     font-family: var(--font-display);
     font-size: clamp(2rem, 6vw, 3.5rem);
     font-weight: 400;
-    color: var(--vintage-wine);
+    color: var(--burgundy);
     text-align: center;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     letter-spacing: 0.04em;
   }
   
   .page-subtitle {
-    font-family: var(--font-display);
-    font-size: clamp(1rem, 3vw, 1.25rem);
-    font-weight: 300;
-    font-style: italic;
-    color: var(--deep-puce);
+    font-family: var(--font-body);
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+    font-weight: 400;
+    font-style: normal;
+    color: var(--burgundy);
+    opacity: 0.65;
     text-align: center;
-    margin-bottom: 48px;
-    letter-spacing: 0.06em;
+    margin-bottom: 28px;
+    letter-spacing: 0.02em;
   }
   
   .divider {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin: 32px 0;
+    margin: 24px 0;
   }
   
   .divider::before,
@@ -48,7 +55,12 @@
   .divider-diamond {
     width: 6px;
     height: 6px;
-    background: var(--gold);
+    background: var(--olive-gold);
     transform: rotate(45deg);
     flex-shrink: 0;
+  }
+  
+  .page-subtitle strong {
+    font-weight: 700;
+    color: var(--burgundy);
   }

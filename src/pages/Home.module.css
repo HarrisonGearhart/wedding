@@ -1,15 +1,22 @@
+/* ── Home wrapper ── */
 .home {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Slideshow */
-  .slideshow {
     position: fixed;
     inset: 0;
-    z-index: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: var(--burgundy);
+  }
+  
+  /* ── Slideshow ── */
+  .slideshow {
+    position: relative;
+    width: 100%;
+    height: calc(52vh - 36px - var(--navbar-height));
+    margin-top: calc(36px + var(--navbar-height));
+    flex-shrink: 0;
+    background: var(--burgundy);
+    overflow: hidden;
   }
   
   .slide {
@@ -17,167 +24,212 @@
     inset: 0;
     opacity: 0;
     transition: opacity 1.8s ease-in-out;
-    background-size: cover;
-    background-position: center;
   }
   
   .slideActive {
     opacity: 1;
   }
   
-  .overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(42, 21, 37, 0.55) 0%,
-      rgba(63, 21, 33, 0.45) 50%,
-      rgba(42, 21, 37, 0.75) 100%
-    );
-    z-index: 1;
+  .slideImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
   }
   
+  .overlay {
+    display: none;
+  }
+  
+  /* ── Indicators ── */
   .indicators {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
-    gap: 8px;
-    z-index: 10;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 0;
+    flex-shrink: 0;
+    background: var(--burgundy);
   }
   
   .dot {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: rgba(239, 212, 196, 0.35);
+    background: rgba(249, 243, 229, 0.3);
     transition: background 0.4s, transform 0.4s;
   }
   
   .dotActive {
-    background: var(--gold);
+    background: var(--olive-gold);
     transform: scale(1.3);
   }
   
-  /* Hero */
+  /* ── Hero text panel ── */
   .hero {
-    position: relative;
-    z-index: 2;
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     text-align: center;
-    /* ticker (36px) + navbar (68px) + small breathing room */
-    padding: calc(36px + 68px + 24px) 24px calc(60px);
-    min-height: 100vh;
-    animation: fadeInUp 1.2s ease both;
-    animation-delay: 0.3s;
+    padding: 12px 24px 16px;
+    background: var(--burgundy);
   }
   
   .preTitle {
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 500;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
-    opacity: 0.9;
+    color: var(--olive-gold);
+    margin-bottom: 8px;
   }
   
   .names {
     font-family: var(--font-display);
-    font-size: clamp(2.8rem, 10vw, 7rem);
-    font-weight: 300;
-    letter-spacing: 0.04em;
-    color: var(--almond);
-    line-height: 1.05;
-    margin-bottom: 20px;
-    text-shadow: 0 2px 30px rgba(42, 21, 37, 0.4);
+    font-size: clamp(2rem, 9vw, 3.5rem);
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1.15;
+    margin-bottom: 10px;
   }
   
   .dateLine {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 10px;
-    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 6px;
     justify-content: center;
   }
   
   .dateBar {
-    width: 32px;
+    width: 24px;
     height: 1px;
-    background: var(--gold);
+    background: var(--olive-gold);
     opacity: 0.7;
     flex-shrink: 0;
   }
   
   .dateText {
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 500;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--almond);
-    opacity: 0.85;
-    text-align: center;
+    color: var(--cream);
+    opacity: 0.9;
   }
   
   .location {
     font-family: var(--font-display);
-    font-size: 1.1rem;
-    font-weight: 300;
-    font-style: italic;
-    color: var(--almond);
-    opacity: 0.75;
-    margin-bottom: 36px;
-    letter-spacing: 0.08em;
+    font-size: 0.95rem;
+    color: var(--cream);
+    opacity: 0.8;
+    margin-bottom: 18px;
   }
   
-  /* CTA nav */
+  /* ── CTA buttons ── */
   .ctaNav {
     display: flex;
     align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
+    gap: 8px;
     justify-content: center;
+    flex-wrap: nowrap;
   }
   
   .cta {
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--almond);
-    padding: 12px 24px;
-    border: 1px solid rgba(239, 212, 196, 0.45);
+    color: var(--cream);
+    padding: 10px 18px;
+    border: 1px solid rgba(249, 243, 229, 0.4);
     border-radius: 2px;
-    transition: background 0.25s, border-color 0.25s, color 0.25s;
-    backdrop-filter: blur(4px);
-    background: rgba(63, 21, 33, 0.15);
+    background: rgba(116, 14, 69, 0.4);
     white-space: nowrap;
+    transition: background 0.25s, color 0.25s;
   }
   
   .cta:hover {
-    background: var(--almond);
-    border-color: var(--almond);
-    color: var(--vintage-wine);
+    background: var(--cream);
+    color: var(--burgundy);
   }
   
   .ctaDivider {
-    color: var(--gold);
+    color: var(--olive-gold);
     font-size: 9px;
     opacity: 0.6;
   }
   
-  /* Welcome Popup */
+  /* ── DESKTOP — full bleed background layout ── */
+  @media (min-width: 768px) {
+    .home {
+      position: fixed;
+      inset: 0;
+    }
+  
+    .slideshow {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+    }
+  
+    .slideImg {
+      object-fit: contain;
+      object-position: center;
+    }
+  
+    .overlay {
+      display: block;
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(53, 6, 14, 0.45) 0%,
+        rgba(53, 6, 14, 0.2) 50%,
+        rgba(53, 6, 14, 0.65) 100%
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+  
+    .indicators {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: transparent;
+      z-index: 10;
+    }
+  
+    .hero {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: transparent;
+      padding: calc(36px + 68px + 16px) 40px 80px;
+      pointer-events: none;
+      animation: fadeInUp 1.2s ease both;
+      animation-delay: 0.3s;
+    }
+  
+    .hero a,
+    .ctaNav { pointer-events: auto; }
+  
+    .preTitle  { font-size: 11px; margin-bottom: 14px; }
+    .names     { font-size: clamp(3rem, 8vw, 7rem); margin-bottom: 18px; }
+    .dateText  { font-size: 11px; }
+    .location  { font-size: 1.2rem; margin-bottom: 32px; }
+    .cta       { padding: 12px 28px; font-size: 11px; }
+  }
+  
+  /* ── Welcome Popup ── */
   .popupOverlay {
     position: fixed;
     inset: 0;
-    z-index: 100;
-    background: rgba(42, 21, 37, 0.65);
+    z-index: 200;
+    background: rgba(53, 6, 14, 0.65);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -187,45 +239,44 @@
   }
   
   .popup {
-    background: var(--almond);
+    background: var(--cream);
     border-radius: 4px;
-    padding: 40px 36px 36px;
+    padding: 36px 28px 32px;
     max-width: 420px;
     width: 100%;
     text-align: center;
-    box-shadow: 0 20px 60px rgba(42, 21, 37, 0.4);
-    border: 1px solid rgba(176, 140, 63, 0.3);
+    box-shadow: 0 20px 60px rgba(53, 6, 14, 0.4);
+    border: 1px solid rgba(138, 131, 39, 0.3);
     animation: fadeInUp 0.5s ease both;
   }
   
   .popupGold {
-    color: var(--gold);
+    color: var(--olive-gold);
     font-size: 1.4rem;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
   
   .popupTitle {
     font-family: var(--font-display);
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: 400;
-    color: var(--vintage-wine);
-    margin-bottom: 16px;
-    letter-spacing: 0.04em;
+    color: var(--burgundy);
+    margin-bottom: 12px;
   }
   
   .popupText {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.7;
-    color: var(--vintage-wine);
+    color: var(--burgundy);
     opacity: 0.85;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
   
   .popupBtn {
     display: inline-block;
     padding: 12px 36px;
-    background: var(--vintage-wine);
-    color: var(--almond);
+    background: var(--burgundy);
+    color: var(--cream);
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.2em;
@@ -233,30 +284,18 @@
     border: none;
     border-radius: 2px;
     transition: background 0.2s;
+    cursor: pointer;
   }
   
   .popupBtn:hover {
-    background: var(--antique-ruby);
-  }
-  
-  @media (max-width: 480px) {
-    .hero {
-      padding-top: calc(36px + 68px + 12px);
-      padding-bottom: 80px;
-      padding-left: 16px;
-      padding-right: 16px;
-    }
-    .names { font-size: clamp(2.2rem, 12vw, 3.5rem); }
-    .ctaNav { gap: 10px; }
-    .cta { padding: 10px 16px; font-size: 10px; }
-    .popup { padding: 28px 20px 24px; }
-    .popupTitle { font-size: 1.8rem; }
+    background: var(--plum);
   }
   
   @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(24px); }
     to   { opacity: 1; transform: translateY(0); }
   }
+  
   @keyframes fadeIn {
     from { opacity: 0; }
     to   { opacity: 1; }

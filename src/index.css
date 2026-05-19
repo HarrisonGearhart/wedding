@@ -1,27 +1,38 @@
 :root {
-    --almond:        #EFD4C4;
-    --pink-pearl:    #E2B3C2;
-    --lilac-sachet:  #E9ADCA;
-    --deep-puce:     #AC5B67;
-    --antique-ruby:  #781727;
-    --vintage-wine:  #3F1521;
-    --dark-ruby:     #63001F;
-    --gold:          #B08C3F;
-    --aubergine:     #2A1525;
+    /* Daelyn's color palette */
+    --cream:         #f9f3e5;
+    --blush:         #e6b0c2;
+    --mauve:         #b87c93;
+    --plum:          #740e45;
+    --burgundy:      #35060e;
+    --olive-gold:    #8a8327;
   
-    --bg:            var(--almond);
-    --bg-dark:       var(--vintage-wine);
-    --text-primary:  var(--vintage-wine);
-    --text-light:    var(--almond);
-    --text-muted:    var(--deep-puce);
-    --accent:        var(--gold);
-    --border:        rgba(63, 21, 33, 0.15);
-    --border-light:  rgba(239, 212, 196, 0.25);
+    /* Semantic mappings */
+    --bg:            var(--mauve);
+    --bg-dark:       var(--burgundy);
+    --text-primary:  var(--burgundy);
+    --text-light:    var(--cream);
+    --text-muted:    var(--mauve);
+    --accent:        var(--olive-gold);
+    --border:        rgba(53, 6, 14, 0.15);
+    --border-light:  rgba(249, 243, 229, 0.25);
   
-    --font-display: 'Cormorant Garamond', serif;
+    /* Keep old names mapped to new colors so nothing breaks */
+    --almond:        var(--cream);
+    --pink-pearl:    var(--blush);
+    --lilac-sachet:  var(--blush);
+    --deep-puce:     var(--mauve);
+    --antique-ruby:  var(--plum);
+    --vintage-wine:  var(--burgundy);
+    --dark-ruby:     var(--burgundy);
+    --gold:          var(--olive-gold);
+    --aubergine:     var(--burgundy);
+  
+    /* Fonts */
+    --font-display: 'Petit Formal Script', cursive;
     --font-body:    'Montserrat', sans-serif;
   
-    --navbar-height: 68px;
+    --navbar-height: 48px;
   }
   
   *, *::before, *::after {
@@ -32,6 +43,7 @@
   
   html {
     scroll-behavior: smooth;
+    overflow-y: scroll; /* prevents layout shift from scrollbar appearing/disappearing */
   }
   
   body {
@@ -40,9 +52,23 @@
     color: var(--text-primary);
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 8px,
+        rgba(53, 6, 14, 0.05) 8px,
+        rgba(53, 6, 14, 0.05) 9px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 8px,
+        rgba(53, 6, 14, 0.05) 8px,
+        rgba(53, 6, 14, 0.05) 9px
+      );
   }
   
-  /* This is critical — makes font-display variable apply everywhere */
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
   }
@@ -63,8 +89,8 @@
   }
   
   ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: var(--almond); }
-  ::-webkit-scrollbar-thumb { background: var(--deep-puce); border-radius: 3px; }
+  ::-webkit-scrollbar-track { background: var(--cream); }
+  ::-webkit-scrollbar-thumb { background: var(--mauve); border-radius: 3px; }
   
   @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(24px); }

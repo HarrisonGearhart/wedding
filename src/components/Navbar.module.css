@@ -13,8 +13,8 @@
   }
   
   .solid {
-    background: var(--vintage-wine);
-    box-shadow: 0 2px 20px rgba(63, 21, 33, 0.18);
+    background: var(--burgundy);
+    box-shadow: 0 2px 20px rgba(53, 6, 14, 0.18);
   }
   
   .inner {
@@ -41,7 +41,7 @@
     font-weight: 600;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--almond);
+    color: var(--cream);
     opacity: 0.85;
     transition: opacity 0.2s;
     border-bottom: 1px solid transparent;
@@ -51,7 +51,7 @@
   .link:hover,
   .active {
     opacity: 1;
-    border-bottom-color: var(--gold);
+    border-bottom-color: var(--olive-gold);
   }
   
   @media (max-width: 480px) {

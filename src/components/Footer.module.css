@@ -1,6 +1,6 @@
 .footer {
-    background: var(--vintage-wine);
-    color: var(--almond);
+    background: var(--burgundy);
+    color: var(--cream);
     padding: 40px 24px;
     text-align: center;
   }
@@ -19,7 +19,7 @@
     font-size: 1.6rem;
     font-weight: 400;
     letter-spacing: 0.06em;
-    color: var(--almond);
+    color: var(--cream);
   }
   
   .date {
@@ -27,7 +27,7 @@
     font-weight: 500;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--olive-gold);
     margin-bottom: 8px;
   }
   
@@ -44,24 +44,22 @@
     font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--almond);
+    color: var(--cream);
     opacity: 0.7;
     transition: opacity 0.2s;
   }
   
-  .link:hover {
-    opacity: 1;
-  }
+  .link:hover { opacity: 1; }
   
   .dot {
-    color: var(--gold);
+    color: var(--olive-gold);
     font-size: 8px;
     opacity: 0.6;
   }
   
   .copy {
     font-size: 11px;
-    color: var(--almond);
+    color: var(--cream);
     opacity: 0.35;
     margin-top: 12px;
     letter-spacing: 0.06em;
