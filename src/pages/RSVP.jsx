@@ -18,7 +18,7 @@ const GUESTS = [
   { id: 11, name: 'Drake DeWitt',                        members: ['Drake DeWitt'] },
   { id: 12, name: 'Kylie & Tyler French',                members: ['Kylie French', 'Tyler French'] },
   { id: 13, name: 'Aaron & Robyn Gearhart',              members: ['Aaron Gearhart', 'Robyn Gearhart'] },
-  { id: 14, name: 'Chris & Cara Gearhart',               members: ['Chris Gearhart', 'Cara Gearhart', 'Gabe Gearhart', 'Evelyn Gearhart', 'Eleanor Gearhart'] },
+  { id: 14, name: 'Chris & Cara Gerhardt',               members: ['Chris Gerhardt', 'Cara Gerhardt', 'Gabe Gerhardt', 'Evelyn Gerhardt', 'Eleanor Gerhardt'] },
   { id: 15, name: 'Connor Gearhart',                     members: ['Connor Gearhart'] },
   { id: 16, name: 'Harry & Sandy Gearhart',              members: ['Harry Gearhart', 'Sandy Gearhart'] },
   { id: 17, name: 'Pat & Jackie Gearhart',               members: ['Pat Gearhart', 'Jackie Gearhart'] },
