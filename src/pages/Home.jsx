@@ -5,12 +5,10 @@ import styles from './Home.module.css'
 import HD1 from '../assets/HD-1.webp'
 import HD2 from '../assets/HD-2.webp'
 import HD3 from '../assets/HD-3.webp'
-import HD4 from '../assets/HD-4.webp'
-import HD5 from '../assets/HD-5.webp'
-import HD6 from '../assets/HD-6.webp'
+import HD10 from '../assets/HD-10.webp'
 import HD7 from '../assets/HD-7.webp'
 
-const SLIDES = [HD1, HD2, HD3, HD4, HD5, HD6, HD7]
+const SLIDES = [HD1, HD2, HD3, HD10, HD7]
 
 export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0)
@@ -88,7 +86,6 @@ export default function Home() {
           </div>
         </div>
       )}
-
     </div>
   )
 }

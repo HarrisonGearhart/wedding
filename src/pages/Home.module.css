@@ -12,7 +12,7 @@
   .slideshow {
     position: relative;
     width: 100%;
-    height: calc(52vh - 36px - var(--navbar-height));
+    height: calc(58vh - 36px - var(--navbar-height));
     margin-top: calc(36px + var(--navbar-height));
     flex-shrink: 0;
     background: var(--burgundy);
@@ -173,6 +173,7 @@
       position: absolute;
       inset: 0;
       height: 100%;
+      margin-top: 0;
     }
   
     .slideImg {
@@ -186,9 +187,9 @@
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(53, 6, 14, 0.45) 0%,
-        rgba(53, 6, 14, 0.2) 50%,
-        rgba(53, 6, 14, 0.65) 100%
+        rgba(64, 31, 53, 0.45) 0%,
+        rgba(64, 31, 53, 0.2) 50%,
+        rgba(64, 31, 53, 0.65) 100%
       );
       z-index: 1;
       pointer-events: none;
@@ -217,7 +218,13 @@
     .hero a,
     .ctaNav { pointer-events: auto; }
   
-    .preTitle  { font-size: 11px; margin-bottom: 14px; }
+    .preTitle {
+      font-size: 11px;
+      margin-bottom: 14px;
+      color: var(--cream);
+      opacity: 0.85;
+    }
+  
     .names     { font-size: clamp(3rem, 8vw, 7rem); margin-bottom: 18px; }
     .dateText  { font-size: 11px; }
     .location  { font-size: 1.2rem; margin-bottom: 32px; }
@@ -229,7 +236,7 @@
     position: fixed;
     inset: 0;
     z-index: 200;
-    background: rgba(53, 6, 14, 0.65);
+    background: rgba(64, 31, 53, 0.65);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -245,7 +252,7 @@
     max-width: 420px;
     width: 100%;
     text-align: center;
-    box-shadow: 0 20px 60px rgba(53, 6, 14, 0.4);
+    box-shadow: 0 20px 60px rgba(64, 31, 53, 0.4);
     border: 1px solid rgba(138, 131, 39, 0.3);
     animation: fadeInUp 0.5s ease both;
   }

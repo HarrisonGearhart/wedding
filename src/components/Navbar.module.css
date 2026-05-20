@@ -14,7 +14,7 @@
   
   .solid {
     background: var(--burgundy);
-    box-shadow: 0 2px 20px rgba(53, 6, 14, 0.18);
+    box-shadow: 0 2px 20px rgba(64, 31, 53, 0.18);
   }
   
   .inner {

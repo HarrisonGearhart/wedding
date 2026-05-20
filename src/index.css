@@ -4,7 +4,7 @@
     --blush:         #e6b0c2;
     --mauve:         #b87c93;
     --plum:          #740e45;
-    --burgundy:      #35060e;
+    --burgundy:      #401f35;
     --olive-gold:    #8a8327;
   
     /* Semantic mappings */
@@ -14,7 +14,7 @@
     --text-light:    var(--cream);
     --text-muted:    var(--mauve);
     --accent:        var(--olive-gold);
-    --border:        rgba(53, 6, 14, 0.15);
+    --border:        rgba(64, 31, 53, 0.15);
     --border-light:  rgba(249, 243, 229, 0.25);
   
     /* Keep old names mapped to new colors so nothing breaks */
@@ -57,15 +57,15 @@
         45deg,
         transparent,
         transparent 8px,
-        rgba(53, 6, 14, 0.05) 8px,
-        rgba(53, 6, 14, 0.05) 9px
+        rgba(64, 31, 53, 0.05) 8px,
+        rgba(64, 31, 53, 0.05) 9px
       ),
       repeating-linear-gradient(
         -45deg,
         transparent,
         transparent 8px,
-        rgba(53, 6, 14, 0.05) 8px,
-        rgba(53, 6, 14, 0.05) 9px
+        rgba(64, 31, 53, 0.05) 8px,
+        rgba(64, 31, 53, 0.05) 9px
       );
   }
   
