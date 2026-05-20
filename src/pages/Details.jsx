@@ -80,7 +80,7 @@ export default function Details() {
             <h2 className={styles.cardTitle}>Parking</h2>
             <div className={styles.divider}><span className={styles.diamond} /></div>
             <p className={styles.cardSub}>
-              Parking is available on the premises and some street parking. The Harwelden also owns the lot on the southwest corner of 21st and Main Street which can be used. Events of 50 or more are required to secure valet. No parking in the adjacent private lots.
+              Parking is available on the premises and some street parking. The Harwelden also owns the lot on the southwest corner of 21st and Main Street which can be used. No parking in the adjacent private lots.
             </p>
           </div>
 
