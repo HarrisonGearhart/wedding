@@ -58,7 +58,7 @@ export default function Home() {
         <h1 className={styles.names}>Harrison & Daelyn</h1>
         <div className={styles.dateLine}>
           <span className={styles.dateBar} />
-          <span className={styles.dateText}>September 25, 2026 &nbsp;·&nbsp; 5:00 – 10:00 PM</span>
+          <span className={styles.dateText}>September 25, 2026 &nbsp;·&nbsp; 4:00 – 10:00 PM</span>
           <span className={styles.dateBar} />
         </div>
         <p className={styles.location}>Harwelden Mansion · Tulsa, Oklahoma</p>
