@@ -70,7 +70,7 @@ export default function Details() {
             <h2 className={styles.cardTitle}>Formal Attire</h2>
             <div className={styles.divider}><span className={styles.diamond} /></div>
             <p className={styles.cardSub}>
-              Please avoid white and ivory. We'd love to see you in our wedding colors — plums, pinks, and greens!
+              Please avoid white and ivory. We'd love to see you in our wedding colors — plums, pinks, yellows, and greens!
             </p>
           </div>
 
