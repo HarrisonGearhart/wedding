@@ -29,7 +29,7 @@ const GUESTS = [
   { id: 22, name: 'Kaylee Holt',                         members: ['Kaylee Holt'] },
   { id: 23, name: 'Lynsey Naugle & Seth Hughes',         members: ['Lynsey Naugle', 'Seth Hughes'] },
   { id: 24, name: 'Zach & Katie Johnston',               members: ['Zach Johnston', 'Katie Johnston'] },
-  { id: 25, name: 'Brenna & Nathan Major',               members: ['Brenna Major', 'Nathan Major'] },
+  { id: 25, name: 'Breanna & Nathan Major',               members: ['Breanna Major', 'Nathan Major'] },
   { id: 26, name: 'Taylor & Chad Coccaro',               members: ['Taylor Coccaro', 'Chad Coccaro'] },
   { id: 27, name: 'Andrea Puigbo',                       members: ['Andrea Puigbo'] },
   { id: 28, name: 'Hannah & Dom Richert',                members: ['Hannah Richert', 'Dom Richert'] },
