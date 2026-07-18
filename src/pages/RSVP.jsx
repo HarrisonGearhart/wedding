@@ -267,7 +267,7 @@ export default function RSVP() {
 
                 <div className={styles.field}>
                   <label className={styles.label} htmlFor="song">
-                    Song / Favorite Couple Song <span className={styles.required}>*</span>
+                    Favorite Love Song <span className={styles.required}>*</span>
                   </label>
                   <input
                     id="song"
