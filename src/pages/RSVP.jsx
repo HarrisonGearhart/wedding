@@ -125,7 +125,7 @@ export default function RSVP() {
           song_request: songRequest,
           allergies:    allergies || 'None',
           notes:        notes || 'None',
-          to_email:     'hgearhart98@gmail.com',
+          to_email:     'daehgearhart@gmail.com',
         },
         EMAILJS_PUBLIC_KEY
       )
